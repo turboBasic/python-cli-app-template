@@ -8,8 +8,8 @@ import typer
 from dynaconf import Dynaconf
 from dynaconf.base import Settings
 
-__PUBLIC_SETTINGS_FILE = 'settings.pce.toml'
-__SECRET_SETTINGS_FILE = '.secrets.pce.toml'
+__PUBLIC_SETTINGS_FILE = 'settings.pca.toml'
+__SECRET_SETTINGS_FILE = '.secrets.pca.toml'
 __FALLBACK_SETTINGS_FILE = str(importlib.resources.files(__package__) / 'config' / __PUBLIC_SETTINGS_FILE)
 
 __settings = Dynaconf(
@@ -20,7 +20,7 @@ __settings = Dynaconf(
         __PUBLIC_SETTINGS_FILE,
         __SECRET_SETTINGS_FILE,
     ],
-    envvar_prefix='PCE',  # Read settings from envvars set by `export PCE_FOO=bar`
+    envvar_prefix='PCA',  # Read settings from envvars set by `export PCA_FOO=bar`
 )
 
 

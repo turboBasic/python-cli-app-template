@@ -35,7 +35,7 @@ dependencies = [
 dynamic = ["version"]
 
 [project.scripts]
-# Use `pce` as command-line script, comment or remove this section if not needed.
+# Use `pca` as command-line script, comment or remove this section if not needed.
 pca = "python_cli_app_template.cli:app"
 
 [project.urls]
