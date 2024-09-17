@@ -6,12 +6,12 @@ Boilerplate for Python CLI utility project.
 
 * Uses [Hatch] - modern PEP-compliant project manager
 * Uses [Typer] framework for managing CLI commands
-* Uses Dynaconf for flexible management of configurations
+* Uses [Dynaconf] for flexible management of configurations
 
 ## Usage
 
 ```bash
-pec --help
+pca --help
 ```
 
 ## Development
