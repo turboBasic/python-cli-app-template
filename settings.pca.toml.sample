@@ -1,0 +1,3 @@
+# Rename file by removing `.sample` suffix to create your own config file
+
+url = 'https://example.org/endpoint'
