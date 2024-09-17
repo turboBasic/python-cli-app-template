@@ -1,5 +1,7 @@
 # ​python-cli-app-template
 
+![python-cli-app-template logo](assets/images/favicon.svg)
+
 Python project featuring the modern and extensible Python project manager hatch.
 
 Read [Features] for overview.
