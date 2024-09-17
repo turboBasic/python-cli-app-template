@@ -7,11 +7,11 @@ console script. This is accomplished via the following lines in `pyproject.toml`
 
 ```toml
 [project.scripts]
-pce = "python_cli_app_template.cli:app"
+pca = "python_cli_app_template.cli:app"
 ```
 
-Then run `hatch run pce fib 10` to execute this in your default environment or
-`hatch shell` to enter the default environment, followed by `pce fib 10`.
+Then run `hatch run pca fib 10` to execute this in your default environment or
+`hatch shell` to enter the default environment, followed by `pca fib 10`.
 
 References:
     - https://setuptools.pypa.io/en/latest/userguide/entry_point.html
