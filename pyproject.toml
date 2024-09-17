@@ -28,8 +28,6 @@ classifiers = [ # ToDo: Modify according to your needs!
 # direct dependencies of this package, installed when users `pip install python-cli-experimental` later.
 dependencies = [
     "dynaconf",
-    "pygments",
-    "pyyaml",
     "typer",
 ]
 dynamic = ["version"]
