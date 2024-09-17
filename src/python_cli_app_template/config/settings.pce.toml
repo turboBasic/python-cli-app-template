@@ -1,0 +1,3 @@
+gerrit_url = 'https://localhost'
+gerrit_username = ''                # Keep this setting in .secrets.iur.toml file
+gerrit_http_password = ''           # Keep this setting in .secrets.iur.toml file
