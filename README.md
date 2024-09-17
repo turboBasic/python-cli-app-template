@@ -26,14 +26,14 @@ activate, or enter, an environment. Instead, you use `hatch run env_name:command
 is assumed for a command if there is no colon found. Thus you must always define your environment in a declarative
 way and hatch makes sure that the environment reflects your declaration by updating it whenever you issue
 a `hatch run ...`. This helps with reproducability and avoids forgetting to specify dependencies since the
-hatch workflow is to specify everything directly in [pyproject.toml](pyproject.toml). Only in rare cases, you
+hatch workflow is to specify everything directly in [pyproject.toml]. Only in rare cases, you
 will use `hatch shell` to enter the `default` environment, which is similar to what you may know from other tools.
 
 To get you started, use `hatch run test:cov` or `hatch run test:no-cov` to run the unitest with or without coverage reports,
 respectively. Use `hatch run lint:all` to run all kinds of typing and linting checks. Try to automatically fix linting
 problems with `hatch run lint:fix` and use `hatch run docs:serve` to build and serve your documentation.
 You can also easily define your own environments and commands. Check out the environment setup of hatch
-in [pyproject.toml](pyproject.toml) for more commands as well as the package, build and tool configuration.
+in [pyproject.toml] for more commands as well as the package, build and tool configuration.
 
 The environments defined by hatch are configured to generate lock files using [hatch-pip-compile] under `locks`.
 To upgrade all packages in an environment like `test`, just run `hatch run test:upgrade-all`. To upgrade specific
@@ -50,3 +50,4 @@ This package was created with [The Hatchlor] project template.
 [hatch]: https://hatch.pypa.io/
 [pre-commit]: https://pre-commit.com/
 [hatch-pip-compile]: https://github.com/juftin/hatch-pip-compile
+[pyproject.toml]: https://github.com/turboBasic/python-cli-app-template/blob/main/pyproject.toml
