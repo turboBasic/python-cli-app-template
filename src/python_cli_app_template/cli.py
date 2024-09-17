@@ -1,4 +1,3 @@
-# ru--ff: noqa: W605
 """
 Creates a set of CLI commands using [Typer](https://typer.tiangolo.com/) package.
 
@@ -23,13 +22,16 @@ from typing import Annotated
 
 import typer
 
-from python_cli_app_template import __version__, cli_factorial, cli_fibonacci
+from python_cli_app_template import __version__, cli_config, cli_factorial, cli_fibonacci
 from python_cli_app_template.config import set_config_file
 
 app = typer.Typer(help=f'Python CLI experimental. Version: {__version__}')
 
 # Inject `factorial` as subcommand which in turn can have its own subcommands
 app.add_typer(cli_factorial.app, name='factorial')
+
+# Inject `config` as subcommand which in turn can have its own subcommands
+app.add_typer(cli_config.app, name='config')
 
 # Because cli_fibonacci does not need a subcommand, we inject it as a command, not as a sub-typer
 # (see https://github.com/fastapi/typer/issues/119)
