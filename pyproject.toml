@@ -8,7 +8,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "python-cli-app-template"
-description = "Python project featuring the modern and extensible Python project manager hatch."
+description = "Python CLI app template project featuring the modern and extensible Python project manager hatch."
 readme = "README.md"
 requires-python = ">=3.11"# only license identifier from https://spdx.org/licenses/ are allowed
 license = { text = "MIT"}
