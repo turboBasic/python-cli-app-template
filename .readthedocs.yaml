@@ -13,19 +13,4 @@ mkdocs:
 
 python:
   install:
-    - method: pip
-      path: .
-      extra_requirements:
-        - mkdocs-material
-        - mkdocs-include-markdown-plugin
-        - mkdocs-gen-files
-        - mkdocs-literate-nav
-        - mkdocs-minify-plugin
-        - mkdocs-section-index
-        - mkdocs-git-revision-date-localized-plugin
-        - mkdocstrings
-        - mkdocs-redirects
-        - mkdocs-glightbox
-        - mike
-        - pymdown-extensions
-        - pygments
+    - requirements: docs/requirements.txt
