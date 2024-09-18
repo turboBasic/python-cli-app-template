@@ -16,18 +16,16 @@ python:
     - method: pip
       path: .
       extra_requirements:
-        - mkdocs~=1.6
-        - mkdocs-material[imaging]~=9.4
+        - mkdocs-material
         - mkdocs-include-markdown-plugin
         - mkdocs-gen-files
         - mkdocs-literate-nav
-        - mkdocs-minify-plugin~=0.8
+        - mkdocs-minify-plugin
         - mkdocs-section-index
-        - mkdocs-git-revision-date-localized-plugin~=1.2
-        - mkdocstrings[python]
-        - mkdocs-redirects~=1.2
-        - mkdocs-glightbox~=0.4.0
-        - mike~=2.1
-        - pymdown-extensions~=10.9
-        - pygments~=2.18
-        - linkchecker~=10.4
+        - mkdocs-git-revision-date-localized-plugin
+        - mkdocstrings
+        - mkdocs-redirects
+        - mkdocs-glightbox
+        - mike
+        - pymdown-extensions
+        - pygments
