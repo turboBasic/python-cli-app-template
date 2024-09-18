@@ -13,8 +13,9 @@ mkdocs:
 
 python:
   install:
-    - path: .
-    - extra_requirements:
+    - method: pip
+      path: .
+      extra_requirements:
         - mkdocs~=1.6
         - mkdocs-material[imaging]~=9.4
         - mkdocs-include-markdown-plugin
