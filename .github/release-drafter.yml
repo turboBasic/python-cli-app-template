@@ -1,20 +1,34 @@
 name-template: '$RESOLVED_VERSION'
-tag-template: 'v$RESOLVED_VERSION'
+tag-template: '$RESOLVED_VERSION'
 
 categories:
+  - title: '💥 Breaking changes'
+    labels:
+      - 'breaking'
   - title: '🚀 Features'
     labels:
-      - 'feat'
+      - 'enhancement'
+      - 'feature'
   - title: '🐛 Bug Fixes'
     labels:
       - 'fix'
-  - title: 'Other updates'
+  - title: '🚚 Build system and CI'
     labels:
-      - 'refactor'
+      - 'build'
+      - 'ci'
+      - 'dependencies'
+  - title: '🧰 Maintenance'
+    labels:
       - 'chore'
-      - 'docs'
-      - 'perf'
-      - 'test'
+  - title: '🍟 Other updates'
+    labels:
+      - 'refactoring'
+      - 'documentation'
+      - 'performance'
+      - 'style'
+      - 'testing'
+exclude-labels:
+  - 'skip-changelog'
 
 change-template: '- $TITLE @$AUTHOR (#$NUMBER)'
 change-title-escapes: '\<*_&' # You can add # and @ to disable mentions, and add ` to disable code blocks.
@@ -36,4 +50,5 @@ template: |
 
   $CHANGES
 
-  Special thanks to: $CONTRIBUTORS
+  ---
+  **Full Changelog**: https://github.com/turboBasic/python-cli-app-template/compare/$PREVIOUS_TAG...$RESOLVED_VERSION

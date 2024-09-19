@@ -16,6 +16,9 @@
 - name: ci
   description: Continuous Integration
   color: 4a97d6
+- name: chore
+  description: General maintenance'
+  color: A8B763
 - name: dependencies
   description: Pull requests that update a dependency file
   color: 0366d6
@@ -43,9 +46,6 @@
 - name: performance
   description: Performance
   color: "016175"
-- name: python
-  description: Pull requests that update Python code
-  color: 2b67c6
 - name: question
   description: Further information is requested
   color: d876e3
@@ -55,6 +55,9 @@
 - name: removal
   description: Removals and Deprecations
   color: 9ae7ea
+- name: skip-changelog
+  description: Skip this in the changelog
+  color: eaecee
 - name: style
   description: Style
   color: c120e5
