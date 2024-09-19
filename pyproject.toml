@@ -85,7 +85,7 @@ exclude = [
 
 [tool.hatch.env]
 requires = [
-    "hatch-pip-compile~=1.11.2",
+    "hatch-pip-compile~=1.11.3",
 ]
 
 [tool.hatch.envs.default]
@@ -105,7 +105,7 @@ upgrade-pkg = "PIP_COMPILE_UPGRADE_PACKAGE='{args}' hatch env run --env {env_nam
 
 [tool.hatch.envs.docs]
 dependencies = [
-    "linkchecker~=10.4",
+    "linkchecker",
     "mike~=2.1",
     "mkdocs-gen-files",
     "mkdocs-git-revision-date-localized-plugin~=1.2",
@@ -139,8 +139,8 @@ validate = "linkchecker --config .linkcheckerrc --ignore-url=/reference --ignore
 
 [tool.hatch.envs.lint]
 dependencies = [
-    "mypy==1.11.1",
-    "ruff==0.5.7",
+    "mypy==1.11.2",
+    "ruff==0.6.5",
 ]
 template = "lint"
 
@@ -175,7 +175,7 @@ template = [
 
 [tool.hatch.envs.test]
 dependencies = [
-    "coverage[toml]>=6.2",
+    "coverage[toml]>=7.6",
     "hypothesis",
     "ipython",
     "jupyterlab",
@@ -219,7 +219,7 @@ warn_unused_ignores = true
 
 [tool.pytest.ini_options]
 addopts = "-ra --quiet --doctest-glob='*.md'"
-minversion = "6.0"
+minversion = "8.0"
 testpaths = [
     "tests",
 ]

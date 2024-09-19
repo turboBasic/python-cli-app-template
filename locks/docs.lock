@@ -3,21 +3,21 @@
 #
 # [constraints] locks/default.lock (SHA256: 24f2274a3d29db6a6c2135f63fc60f6ee46c7c6487cfa2c0bf45d0303bb16f02)
 #
-# - mkdocs~=1.6
-# - mkdocs-material[imaging]~=9.4
-# - mkdocs-include-markdown-plugin
-# - mkdocs-gen-files
-# - mkdocs-literate-nav
-# - mkdocs-minify-plugin~=0.8
-# - mkdocs-section-index
-# - mkdocs-git-revision-date-localized-plugin~=1.2
-# - mkdocstrings[python]
-# - mkdocs-redirects~=1.2
-# - mkdocs-glightbox~=0.4.0
+# - linkchecker
 # - mike~=2.1
-# - pymdown-extensions~=10.9
+# - mkdocs-gen-files
+# - mkdocs-git-revision-date-localized-plugin~=1.2
+# - mkdocs-glightbox~=0.4.0
+# - mkdocs-include-markdown-plugin
+# - mkdocs-literate-nav
+# - mkdocs-material[imaging]~=9.4
+# - mkdocs-minify-plugin~=0.8
+# - mkdocs-redirects~=1.2
+# - mkdocs-section-index
+# - mkdocstrings[python]
+# - mkdocs~=1.6
 # - pygments~=2.18
-# - linkchecker~=10.4
+# - pymdown-extensions~=10.9
 # - dynaconf
 # - typer
 #
@@ -145,7 +145,7 @@ mkdocs-include-markdown-plugin==6.2.2
     # via hatch.envs.docs
 mkdocs-literate-nav==0.6.1
     # via hatch.envs.docs
-mkdocs-material==9.5.34
+mkdocs-material==9.5.35
     # via hatch.envs.docs
 mkdocs-material-extensions==1.3.1
     # via mkdocs-material
@@ -171,7 +171,7 @@ pillow==10.4.0
     # via
     #   cairosvg
     #   mkdocs-material
-platformdirs==4.3.3
+platformdirs==4.3.6
     # via
     #   mkdocs-get-deps
     #   mkdocstrings
