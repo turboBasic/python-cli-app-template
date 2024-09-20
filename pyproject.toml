@@ -18,6 +18,7 @@ classifiers = [
 ]
 dependencies = [
     "dynaconf",
+    "sympy",
     "typer",
 ]
 description = "Python CLI app template project featuring the modern and extensible Python project manager hatch."

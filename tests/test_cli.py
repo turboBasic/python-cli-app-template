@@ -21,6 +21,13 @@ def test_cli_factorial_simple():
     assert result.stdout.rstrip() == '7! = 5040'
 
 
+def test_cli_prime():
+    """CLI Tests: prime command"""
+    result = runner.invoke(app, ['prime', '99'])
+    assert result.exit_code == 0
+    assert result.stdout.rstrip() == 'The 99-th prime number is 523'
+
+
 def test_cli_factorial_gamma():
     """CLI Tests: factorial gamma command"""
     result = runner.invoke(app, ['factorial', 'gamma', '5'])
