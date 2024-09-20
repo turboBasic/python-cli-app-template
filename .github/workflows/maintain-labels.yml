@@ -1,0 +1,34 @@
+# Maintains list of labels in repository
+
+name: maintain-labels
+
+permissions:
+  actions: read
+  contents: read
+  security-events: write
+  pull-requests: write
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - .github/maintain-labels.yml
+      - .github/workflows/maintain-labels.yml
+  pull_request:
+    paths:
+      - .github/maintain-labels.yml
+      - .github/workflows/maintain-labels.yml
+
+jobs:
+  labeler:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: crazy-max/ghaction-github-labeler@v5
+        with:
+          exclude: |
+            help*
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          skip-delete: false
+          yaml-file: .github/maintain-labels.yml

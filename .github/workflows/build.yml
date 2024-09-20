@@ -1,4 +1,6 @@
-name: Build
+# Builds application and uploads package to PyPi
+
+name: build
 
 on:
   pull_request:
