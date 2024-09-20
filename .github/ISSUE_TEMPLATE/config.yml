@@ -1,0 +1,7 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Project support forum
+    url: https://github.com/turboBasic/python-cli-app-template/discussions/new
+    about: |
+      Please ask and answer questions here. In some cases, it’ better to use discussions,
+      especially when your topic doesn’t fit into available issue templates.
