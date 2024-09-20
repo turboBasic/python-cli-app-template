@@ -20,7 +20,7 @@ from typing import Annotated
 import typer
 
 from python_cli_app_template import __version__
-from python_cli_app_template.cli import config, factorial, fibonacci, prime
+from python_cli_app_template.cli import config, factorial, prime
 from python_cli_app_template.config import set_config_file
 
 app = typer.Typer(help=f'Python CLI experimental. Version: {__version__}')
@@ -31,9 +31,8 @@ app.add_typer(factorial.app, name='factorial')
 # Inject `config` as subcommand which in turn can have its own subcommands
 app.add_typer(config.app, name='config')
 
-# Because cli_fibonacci and cli_prime do not have subcommands, we inject them directly
-# as commands, not as a sub-typers (see https://github.com/fastapi/typer/issues/119)
-app.command(name='fib')(fibonacci.main)
+# Because cli_prime does not have subcommands, we inject it directly
+# as command, not as a sub-typer (see https://github.com/fastapi/typer/issues/119)
 app.command(name='prime')(prime.main)
 
 

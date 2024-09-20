@@ -7,13 +7,6 @@ from python_cli_app_template.cli.main import app
 runner = CliRunner()
 
 
-def test_cli_fibonacci():
-    """CLI Tests: fib command"""
-    result = runner.invoke(app, ['fib', '7'])
-    assert result.exit_code == 0
-    assert result.stdout.rstrip() == 'The 7-th Fibonacci number is 13'
-
-
 def test_cli_factorial_simple():
     """CLI Tests: factorial simple command"""
     result = runner.invoke(app, ['factorial', 'simple', '7'])
