@@ -51,5 +51,4 @@ template: |
 
   ---
   **Full Changelog**: https://github.com/turboBasic/python-cli-app-template/compare/$PREVIOUS_TAG...$RESOLVED_VERSION
-  ---
-  $CONTRIBUTORS
+  **Contributors**: $CONTRIBUTORS
