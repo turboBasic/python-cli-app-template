@@ -2,7 +2,7 @@ import logging
 
 from typer.testing import CliRunner
 
-from python_cli_app_template.cli import app
+from python_cli_app_template.cli.main import app
 
 runner = CliRunner()
 

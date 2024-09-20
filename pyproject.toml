@@ -36,7 +36,7 @@ requires-python = ">=3.11"
 text = "MIT"
 
 [project.scripts]
-pca = "python_cli_app_template.cli:app"
+pca = "python_cli_app_template.cli.main:app"
 
 [project.urls]
 Documentation = "https://turbobasic.github.io/python-cli-app-template"
