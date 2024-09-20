@@ -1,4 +1,6 @@
-name: Release Drafter
+# Drafts your next Release notes as Pull Requests are merged into "main"
+
+name: release-drafter
 
 on:
   push:
@@ -11,7 +13,7 @@ jobs:
     permissions:
       contents: write
     steps:
-      # Drafts your next Release notes as Pull Requests are merged into "main"
+
       - uses: release-drafter/release-drafter@v6
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

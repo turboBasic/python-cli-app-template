@@ -14,7 +14,6 @@ categories:
       - 'fix'
   - title: '🚚 Build system and CI'
     labels:
-      - 'build'
       - 'ci'
       - 'dependencies'
   - title: '🧰 Maintenance'
@@ -30,7 +29,7 @@ categories:
 exclude-labels:
   - 'skip-changelog'
 
-change-template: '- $TITLE @$AUTHOR (#$NUMBER)'
+change-template: '- $TITLE (#$NUMBER)'
 change-title-escapes: '\<*_&' # You can add # and @ to disable mentions, and add ` to disable code blocks.
 
 version-resolver:
@@ -52,3 +51,5 @@ template: |
 
   ---
   **Full Changelog**: https://github.com/turboBasic/python-cli-app-template/compare/$PREVIOUS_TAG...$RESOLVED_VERSION
+  ---
+  $CONTRIBUTORS

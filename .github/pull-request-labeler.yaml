@@ -1,0 +1,23 @@
+# Used by actions/labeler
+
+ci:
+  - changed-files:
+      - any-glob-to-any-file:
+        - .github/**
+        - .readthedocs.yaml
+        - mkdocs.yml
+        - pyproject.toml
+
+documentation:
+  - changed-files:
+      - any-glob-to-any-file:
+        - docs/**
+        - '*.md'
+        - '*.txt'
+
+chore:
+  - changed-files:
+      - any-glob-to-any-file:
+        - .*rc
+        - .git*
+        - .editorconfig
