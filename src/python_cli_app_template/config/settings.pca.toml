@@ -1,3 +1,0 @@
-url = 'https://localhost'
-username = ''                # Keep this setting in .secrets.iur.toml file
-http_password = ''           # Keep this setting in .secrets.iur.toml file

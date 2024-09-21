@@ -8,6 +8,7 @@ Read more about conftest.py under:
 """
 
 import logging
+import os
 from contextlib import contextmanager
 
 import pytest
@@ -26,3 +27,24 @@ def logging_format():
             handler.setFormatter(original_formatter)
 
     return context
+
+
+@pytest.fixture(autouse=True)
+def mock_config_files(fs):
+    current_dir = '/foo'
+    fs.create_file(
+        f'{current_dir}/settings.pca.toml',
+        contents="""
+            url = "https://foo"
+        """,
+    )
+    fs.create_file(
+        f'{current_dir}/.secrets.pca.toml',
+        contents="""
+             username = "john_doe"
+             http_password = "Påsswørd123!"
+        """,
+    )
+    os.chdir(current_dir)
+
+    from python_cli_app_template.config import settings  # noqa: F401
