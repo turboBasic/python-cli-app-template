@@ -50,7 +50,7 @@ def main(
         typer.Option('--version', callback=version_callback, is_eager=True),
     ] = None,
 ):
-    """Python CLI Experimental: boilerplate project for modern CLI utility"""
+    """Python CLI Application template: boilerplate project for modern CLI utility"""
     logging.getLogger(__name__).debug(f'Global arguments: config-file={config_file}, version={version}')
     for config_file_item in config_file or []:
         load_config_file(config_file_item)
