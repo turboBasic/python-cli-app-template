@@ -43,4 +43,11 @@ def mock_config_files(fs):
              http_password = "Påsswørd123!"
         """,
     )
+    fs.create_file(
+        f'{current_dir}/some-file.toml',
+        contents="""
+             username = "from-some-file"
+             http_password = "from-some-file"
+        """,
+    )
     os.chdir(current_dir)
