@@ -1,10 +1,8 @@
 """
-Dummy conftest.py for `python-cli-app-template`.
+Fixtures for pytest
 
-If you don't know what this is for, just leave it empty.
-Read more about conftest.py under:
+Read more about conftest.py:
 - https://docs.pytest.org/en/stable/fixture.html
-- https://docs.pytest.org/en/stable/writing_plugins.html
 """
 
 import logging
@@ -29,7 +27,7 @@ def logging_format():
     return context
 
 
-@pytest.fixture(autouse=True)
+@pytest.fixture
 def mock_config_files(fs):
     current_dir = '/foo'
     fs.create_file(
@@ -46,5 +44,3 @@ def mock_config_files(fs):
         """,
     )
     os.chdir(current_dir)
-
-    from python_cli_app_template.config import settings  # noqa: F401

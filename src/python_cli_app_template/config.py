@@ -21,7 +21,7 @@ from os import PathLike
 from pathlib import Path
 
 import typer
-from dynaconf import Dynaconf
+from dynaconf import Dynaconf, inspect_settings
 from dynaconf.base import Settings
 
 __PACKAGE_PATH = importlib.resources.files(__package__)
@@ -35,7 +35,6 @@ __ENV_VAR_PREFIX = 'PCA'
 __settings: Settings | None = None
 
 
-# TODO convert to property
 def settings() -> Settings:
     global __settings  # noqa: PLW0603
     if not __settings:
@@ -52,7 +51,7 @@ def settings() -> Settings:
     return __settings
 
 
-def load_config_file(config_file: PathLike) -> None:
+def load_config_file(config_file: str | PathLike) -> None:
     config_file_path = Path(config_file).resolve()
     if not config_file_path.exists():
         logging.getLogger(__name__).warning(f'{config_file_path} does not exist')
@@ -60,6 +59,37 @@ def load_config_file(config_file: PathLike) -> None:
 
     logging.getLogger(__name__).debug(f'Loading config file: {config_file_path}')
     settings().load_file(config_file_path)
+
+
+def settings_history() -> str:
+    result: list[str] = []
+    for item, value in settings().as_dict().items():
+        result.append(f'{item}: {value}')
+        for event in _get_history(item):
+            if event['loader'] == 'toml':
+                try:
+                    rel_path = Path(event['identifier']).relative_to(Path.cwd())
+                except ValueError:
+                    rel_path = Path(event['identifier']).resolve()
+                result.append(f'  file({rel_path}):  {event["value"]}')
+            else:
+                result.append(f'  event({event["loader"]}):  {event["value"]}')
+    return '\n'.join(result)
+
+
+def settings_as_str() -> str:
+    result: list[str] = []
+    for k, v in settings().as_dict().items():
+        result.append(f'{k}: {v}')
+    return '\n'.join(result)
+
+
+def _get_history(item: str) -> list[dict]:
+    result = []
+    for event in inspect_settings(settings())['history']:
+        if item in event['value']:
+            result.append({**event, **{'value': event['value'][item]}})
+    return result
 
 
 if __name__ == '__main__':
