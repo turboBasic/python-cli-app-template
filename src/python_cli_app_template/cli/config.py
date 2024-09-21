@@ -37,7 +37,10 @@ def _print_settings_history() -> None:
         typer.echo(f'{item}: {value}')
         for event in _get_history(item):
             if event['loader'] == 'toml':
-                rel_path = Path(event['identifier']).relative_to(Path.cwd())
+                try:
+                    rel_path = Path(event['identifier']).relative_to(Path.cwd())
+                except ValueError:
+                    rel_path = Path(event['identifier']).resolve()
                 typer.echo(f'  ({rel_path}):  {event["value"]}')
             else:
                 typer.echo(f'  ({event["loader"]}):  {event["value"]}')

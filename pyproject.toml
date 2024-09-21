@@ -181,6 +181,7 @@ dependencies = [
     "ipython",
     "jupyterlab",
     "pandas",
+    "pyfakefs",
     "pytest",
     "pytest-cov",
     "pytest-mock",
@@ -307,6 +308,7 @@ known-first-party = [
     "T201",
 ]
 "tests/**/*" = [
+    "PLC0415",
     "PLR2004",
     "S101",
     "TID252",
