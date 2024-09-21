@@ -1,5 +1,27 @@
 # Changelog
 
+## Version 0.3.0
+
+💥 Breaking changes
+- Remove fib command (#19)
+
+🚀 Features
+- Feature: add fetch \& prime commands (#19)
+
+🚚 Build system and CI
+- improve formatting of release-drafter (#17)
+- add auto-labeler workflow (#16)
+
+🧰 Maintenance
+- refactoring: consistent naming of workflows (#15)
+- chore: improve issue templates (#14)
+
+🍟 Other updates
+- doc: update changelog (#12, #20)
+
+---
+**Full Changelog**: https://github.com/turboBasic/python-cli-app-template/compare/0.2.3...0.3.0
+
 ## Version 0.2.3
 
 🚚 Build system and CI
