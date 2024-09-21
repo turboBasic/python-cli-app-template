@@ -1,13 +1,12 @@
 from typer.testing import CliRunner
 
+from python_cli_app_template.cli.main import app
+
 runner = CliRunner()
 
 
-def test_cli_config():
+def test_cli_config(mock_config_files):
     """CLI Tests: config command"""
-
-    # GIVEN
-    from python_cli_app_template.cli.main import app
 
     # WHEN
     result = runner.invoke(app, ['config', 'show', '--show-origin'])
