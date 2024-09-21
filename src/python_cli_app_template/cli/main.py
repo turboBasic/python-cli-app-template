@@ -44,7 +44,7 @@ def version_callback(value: bool):  # noqa: FBT001
 @app.callback()
 def main(
     ctx: typer.Context,
-    config_file: Annotated[str | None, typer.Option(help='Config file')] = None,
+    config_file: Annotated[list[str] | None, typer.Option(help='Config file')] = None,
     version: Annotated[
         bool | None,
         typer.Option('--version', callback=version_callback, is_eager=True),
@@ -52,8 +52,8 @@ def main(
 ):
     """Python CLI Experimental: boilerplate project for modern CLI utility"""
     logging.getLogger(__name__).debug(f'Global arguments: config-file={config_file}, version={version}')
-    if config_file:
-        load_config_file(config_file)
+    for config_file_item in config_file or []:
+        load_config_file(config_file_item)
     logging.getLogger(__name__).debug(f'About to execute command: {ctx.invoked_subcommand}')
 
 
