@@ -10,8 +10,7 @@ pca = "python_cli_app_template.cli.cli:app"
 
 Then run `hatch run pca prime 10` to execute this in your default environment.
 If you install the package using `pip install`, the application can be invoked
-by `pca prime 10` command
-
+by `pca prime 10` command.
 """
 
 import logging
@@ -36,12 +35,23 @@ app.add_typer(config.app, name='config')
 app.command(name='prime')(prime.main)
 
 
+def version_callback(value: bool):  # noqa: FBT001
+    if value:
+        typer.echo(f'Python CLI app template: {__version__}')
+        raise typer.Exit()
+
+
 @app.callback()
 def main(
     ctx: typer.Context,
     config_file: Annotated[str | None, typer.Option(help='Config file')] = None,
+    version: Annotated[
+        bool | None,
+        typer.Option('--version', callback=version_callback, is_eager=True),
+    ] = None,
 ):
     """Python CLI Experimental: boilerplate project for modern CLI utility"""
+    logging.getLogger(__name__).debug(f'Global arguments: config-file={config_file}, version={version}')
     if config_file:
         load_config_file(config_file)
     logging.getLogger(__name__).debug(f'About to execute command: {ctx.invoked_subcommand}')
