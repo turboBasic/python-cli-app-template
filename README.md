@@ -5,10 +5,7 @@ Boilerplate for Python CLI utility project.
 [![build](https://github.com/turboBasic/python-cli-app-template/actions/workflows/build.yml/badge.svg?event=push)](https://github.com/turboBasic/python-cli-app-template/actions/workflows/build.yml)
 [![codecov](https://codecov.io/gh/turboBasic/python-cli-app-template/graph/badge.svg?token=K7KT06FVH5)](https://codecov.io/gh/turboBasic/python-cli-app-template)
 
-
-Coverage.io:<br>
-[![Codecov.io](https://codecov.io/gh/turboBasic/python-cli-app-template/graphs/tree.svg?token=K7KT06FVH5)](https://app.codecov.io/gh/turboBasic/python-cli-app-template)
-
+![python-cli-app-template logo](https://raw.githubusercontent.com/turboBasic/python-cli-app-template/refs/heads/main/docs/assets/images/favicon.svg)
 
 
 ## Features
