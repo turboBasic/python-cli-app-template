@@ -1,5 +1,14 @@
 # Changelog
 
+## Version 0.3.0+doc1
+
+## 🍟 Other updates
+
+doc: fix errors changelog and documentation in 0.3.0 (#24)
+
+---
+**Full Changelog**: https://github.com/turboBasic/python-cli-app-template/compare/0.3.0...0.3.0+doc1
+
 ## Version 0.3.0
 
 💥 Breaking changes
