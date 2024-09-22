@@ -1,9 +1,18 @@
 # Changelog
 
+## Version 0.3.0+doc3
+
+🍟 Other updates
+- doc: fix typo in Changelog (#26)
+
+---
+**Full Changelog**: https://github.com/turboBasic/python-cli-app-template/compare/0.3.0+doc2...0.3.0+doc3
+
+
 ## Version 0.3.0+doc2
 
 🍟 Other updates
-- doc: fix formatting in Changelog in 0.3.1+doc1 (#25)
+- doc: fix formatting in Changelog in 0.3.0+doc1 (#25)
 
 ---
 **Full Changelog**: https://github.com/turboBasic/python-cli-app-template/compare/0.3.0+doc1...0.3.0+doc2
