@@ -22,6 +22,54 @@ def test_cli_factorial_simple():
     assert result.stdout.rstrip() == '7! = 5040'
 
 
+def test_cli_fetch(requests_mock):
+    """CLI Tests: fetch command"""
+
+    # GIVEN
+    requests_mock.get(
+        'https://ipinfo.io',
+        text="""{
+            "ip": "1.1.1.1",
+            "hostname": "foo.example.com",
+            "city": "Santa Teresita",
+            "region": "Buenos Aires",
+            "country": "AR",
+            "loc": "-36.533014,-56.694836",
+            "org": "Alvarez PLC",
+            "postal": "7107",
+            "timezone": "America/Argentina/Buenos_Aires",
+            "readme": "https://ipinfo.io/missingauth"
+        }""",
+    )
+    requests_mock.get(
+        'http://api.open-notify.org/astros.json',
+        text="""{
+            "people": [
+                { "craft": "Startrek", "name": "Dr(a). Felicitas Benitez" },
+                { "craft": "Startrek", "name": "Amy Bevan-Allen" }
+            ]
+        }""",
+    )
+
+    # WHEN
+    result = runner.invoke(app, ['fetch', 'astronauts'])
+    # THEN
+    assert result.exit_code == 0
+    assert len(result.stdout.rstrip().splitlines()) > 0
+
+    # WHEN
+    result = runner.invoke(app, ['fetch', 'location'])
+    # THEN
+    assert result.exit_code == 0
+    assert re.match(r'\d+\.\d+[NS] \d+\.\d+[EW]', result.stdout.rstrip())
+
+    # WHEN
+    result = runner.invoke(app, ['fetch', 'population'])
+    # THEN
+    assert result.exit_code == 0
+    assert re.match(r'^\d+$', result.stdout.rstrip())
+
+
 def test_cli_prime():
     """CLI Tests: prime command"""
     result = runner.invoke(app, ['prime', '99'])

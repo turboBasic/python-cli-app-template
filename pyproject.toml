@@ -18,6 +18,7 @@ classifiers = [
 ]
 dependencies = [
     "dynaconf",
+    "requests",
     "sympy",
     "typer",
 ]
@@ -187,6 +188,7 @@ dependencies = [
     "pytest-mock",
     "pytest-sugar",
     "pytest-vcr",
+    "requests_mock",
     "seaborn",
 ]
 path = ".venv"
