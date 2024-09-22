@@ -1,16 +1,15 @@
 """
-Creates a set of CLI commands using [Typer](https://typer.tiangolo.com) package.
+Creates CLI commands and sub-commands using [Typer](https://typer.tiangolo.com) package.
 
-This command is made available to the user via the following lines in `pyproject.toml`:
+This module can be invoked from shell by executing `pca` command. This is
+enabled in the following lines in `pyproject.toml`:
 
 ```toml
 [project.scripts]
-pca = "python_cli_app_template.cli.cli:app"
+pca = "python_cli_app_template.cli.main:app"
 ```
 
-Then run `hatch run pca prime 10` to execute this in your default environment.
-If you install the package using `pip install`, the application can be invoked
-by `pca prime 10` command.
+Read detailed help about commands and parameters by executing `pca --help`
 """
 
 import logging

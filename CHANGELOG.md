@@ -6,7 +6,7 @@
 - Remove fib command (#19)
 
 🚀 Features
-- Feature: add fetch \& prime commands (#19)
+- Feature: add prime command (#19)
 
 🚚 Build system and CI
 - improve formatting of release-drafter (#17)
