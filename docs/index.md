@@ -1,6 +1,6 @@
 # ​python-cli-app-template
 
-![python-cli-app-template logo](assets/images/favicon.svg)
+<img src="assets/images/favicon.svg" alt="python-cli-app-template logo" width="240px">
 
 Python project featuring the modern and extensible Python project manager hatch.
 
