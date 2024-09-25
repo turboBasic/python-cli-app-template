@@ -23,13 +23,13 @@ from python_cli_app_template.config import load_config_file
 
 app = typer.Typer(help=f'Python CLI experimental. Version: {__version__}')
 
-# Inject `config`, `factorial` and `fetch` as subcommands which in turn can have its own subcommands
+# Inject `config` and `fetch` as subcommands which in turn can have its own subcommands
 app.add_typer(config.app, name='config')
-app.add_typer(factorial.app, name='factorial')
 app.add_typer(fetch.app, name='fetch')
 
-# Because cli_prime does not have subcommands, we inject it directly
-# as command, not as a sub-typer (see https://github.com/fastapi/typer/issues/119)
+# Because cli_prime and cli.factorial do not have subcommands, we inject it directly
+# as commands, not as a sub-typer (see https://github.com/fastapi/typer/issues/119)
+app.command(name='factorial')(factorial.main)
 app.command(name='prime')(prime.main)
 
 

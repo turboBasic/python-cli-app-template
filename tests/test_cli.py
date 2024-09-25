@@ -8,18 +8,24 @@ from python_cli_app_template.cli.main import app
 runner = CliRunner()
 
 
-def test_cli_factorial_gamma():
-    """CLI Tests: factorial gamma command"""
-    result = runner.invoke(app, ['factorial', 'gamma', '5'])
+def test_cli_factorial():
+    """CLI Tests: factorial command"""
+    # WHEN
+    result = runner.invoke(app, ['factorial', '5'])
+    # THEN
     assert result.exit_code == 0
     assert result.stdout.rstrip() == '5.0! = 𝛤(6.0) = 120.0'
 
-
-def test_cli_factorial_simple():
-    """CLI Tests: factorial simple command"""
-    result = runner.invoke(app, ['factorial', 'simple', '7'])
+    # WHEN
+    result = runner.invoke(app, ['factorial', '--', '-4.5'])
+    # THEN
     assert result.exit_code == 0
-    assert result.stdout.rstrip() == '7! = 5040'
+    assert result.stdout.rstrip() == '-4.5! = 𝛤(-3.5) = 0.27008820585226917'
+
+    # WHEN
+    result = runner.invoke(app, ['factorial', '--', '-10'])
+    # THEN
+    assert result.exit_code != 0
 
 
 def test_cli_fetch(requests_mock):
