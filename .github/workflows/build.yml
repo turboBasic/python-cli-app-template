@@ -7,10 +7,8 @@ on:
     branches:
       - main
     paths-ignore:
-      - '.github/**'
       - 'docs/**'
       - '**.md'
-      - '**.txt'
       - '.[a-z]+'
   push:
     branches:
@@ -56,6 +54,9 @@ jobs:
         token: ${{ secrets.CODECOV_TOKEN }}
         fail_ci_if_error: true
         verbose: true
+    - name: Build documentation
+      run: |
+        hatch run docs:build-check
 
   release:
     runs-on: ubuntu-latest
