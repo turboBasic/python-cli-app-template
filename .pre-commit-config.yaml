@@ -33,7 +33,7 @@ repos:
       args: ["--install-types", "--non-interactive"]
       additional_dependencies: [types-tabulate, types-cachetools]
 
-- repo: https://github.com/kieran-ryan/pyprojectsort
-  rev: v0.3.0
+- repo: https://github.com/turbobasic/pyprojectsort
+  rev: v0.3.1
   hooks:
     - id: pyprojectsort
