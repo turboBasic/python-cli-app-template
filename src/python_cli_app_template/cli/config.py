@@ -18,7 +18,7 @@ def show(
         bool, typer.Option('--show-origin', help='Show origin of each configuration item.')
     ] = False,
 ):
-    """Show all configuration items"""
+    """Show all configuration items."""
     if show_origin:
         typer.echo(config.settings_history())
     else:
@@ -27,8 +27,8 @@ def show(
 
 @app.callback()
 def main(ctx: typer.Context):
-    """Manage app configuration"""
-    logging.getLogger(__name__).debug(f'About to execute command: {ctx.invoked_subcommand}')
+    """Manage app configuration."""
+    logging.getLogger(__name__).debug(f'About to execute command: {ctx.command.name}/{ctx.invoked_subcommand}')
 
 
 if __name__ == '__main__':
