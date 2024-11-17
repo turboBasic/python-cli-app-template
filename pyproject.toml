@@ -17,10 +17,15 @@ classifiers = [
     "Programming Language :: Python :: Implementation :: CPython",
 ]
 dependencies = [
+    "cartopy",
     "dynaconf",
+    "geopandas",
+    "matplotlib",
+    "numpy",
     "requests",
     "sympy",
     "typer",
+    "valeriepieris",
 ]
 description = "Python CLI app template project featuring the modern and extensible Python project manager hatch."
 dynamic = [
