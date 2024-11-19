@@ -10,9 +10,11 @@ import cartopy.feature
 # import geopandas as gpd
 import matplotlib as mpl
 import matplotlib.pyplot as plt
+import numpy as np
 import typer
 
 # from cartopy.io import shapereader
+from python_cli_app_template import config
 from python_cli_app_template.geo import Country
 
 app = typer.Typer()
@@ -46,10 +48,14 @@ def setup_country_map(country: Country) -> mpl.pyplot.Axes:
     return ax
 
 
+def geo_data() -> str:
+    return config.geo_data('15_min')
+
+
 @app.command()
 def draw(country_name: Annotated[str, typer.Argument(..., help='Country')]) -> None:
     """Draw the map of the country."""
-    logging.getLogger(__name__).info(f'Country: {country_name}')
+    logging.getLogger(__name__).info(f'geo/draw: country_name={country_name}')
 
     # Prepare map
     country = Country(country_name)
@@ -57,6 +63,16 @@ def draw(country_name: Annotated[str, typer.Argument(..., help='Country')]) -> N
     plt.title(country.name)
     plt.show()
     plt.close()
+
+
+@app.command()
+def population() -> None:
+    """Display population data."""
+    logging.getLogger(__name__).info('geo/population: Listing all countries')
+
+    input_data = np.loadtxt(geo_data(), skiprows=6)
+    input_data[input_data < 0] = 0
+    typer.echo(input_data)
 
 
 @app.callback()
