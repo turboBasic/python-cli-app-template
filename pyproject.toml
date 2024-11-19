@@ -25,7 +25,6 @@ dependencies = [
     "requests",
     "sympy",
     "typer",
-    "valeriepieris",
 ]
 description = "Python CLI app template project featuring the modern and extensible Python project manager hatch."
 dynamic = [
