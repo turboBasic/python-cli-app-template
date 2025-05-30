@@ -17,7 +17,11 @@ classifiers = [
     "Programming Language :: Python :: Implementation :: CPython",
 ]
 dependencies = [
+    "cartopy",
     "dynaconf",
+    "geopandas",
+    "matplotlib",
+    "numpy",
     "requests",
     "sympy",
     "typer",

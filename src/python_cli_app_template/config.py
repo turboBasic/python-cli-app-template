@@ -35,6 +35,11 @@ __ENV_VAR_PREFIX = 'PCA'
 __settings: Settings | None = None
 
 
+def geo_data(resolution: str = '15_min') -> str:
+    geodata_file_prefix = 'gpw_v4_population_density_rev11_2020_'
+    return str(__PACKAGE_PATH / 'geodata' / f'{geodata_file_prefix}{resolution}.asc')
+
+
 def settings() -> Settings:
     global __settings  # noqa: PLW0603
     if not __settings:
