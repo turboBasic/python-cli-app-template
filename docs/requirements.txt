@@ -10,5 +10,5 @@ mkdocstrings[python]
 mkdocs-redirects~=1.2
 mkdocs-glightbox~=0.5.2
 mike~=2.1
-pymdown-extensions~=10.20
+pymdown-extensions~=10.21
 pygments~=2.19
