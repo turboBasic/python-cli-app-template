@@ -11,4 +11,4 @@ mkdocs-redirects~=1.2
 mkdocs-glightbox~=0.5.2
 mike~=2.1
 pymdown-extensions~=10.20
-pygments~=2.19
+pygments~=2.20
