@@ -19,7 +19,7 @@ import typer
 from rich.logging import RichHandler
 
 from python_cli_app_template import __version__
-from python_cli_app_template.cli import config, factorial, fetch, prime
+from python_cli_app_template.cli import config, factorial, fetch, geo, prime
 from python_cli_app_template.config import load_config_file
 
 GLOBAL_LOG_LEVEL = logging.INFO
@@ -34,6 +34,7 @@ app = typer.Typer(help=f'Python CLI experimental. Version: {__version__}')
 # Inject `config` and `fetch` as subcommands which in turn can have its own subcommands
 app.add_typer(config.app, name='config')
 app.add_typer(fetch.app, name='fetch')
+app.add_typer(geo.app, name='geo')
 
 # Because cli_prime and cli.factorial do not have subcommands, we inject it directly
 # as commands, not as a sub-typer (see https://github.com/fastapi/typer/issues/119)
